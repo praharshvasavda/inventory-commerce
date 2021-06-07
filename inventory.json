@@ -1,0 +1,8 @@
+--abc
+Content-Disposition: form-data; name="fileUpload"; filename="locationInventory.json"
+Content-Type: application/json; charset=UTF-8;
+Content-Transfer-Encoding: binary
+
+{"location":"W002-Warehouse","mode":"UPDATE"}
+{"recordId":"54904fsadb-9fdd-466d-a987-cf20dfsfas36b23a","onHand":200,"effectiveDate":"2021-01-01T14:05:22.790896-07:00","sku":"2332505","safetyStockCount":0}
+--abc--

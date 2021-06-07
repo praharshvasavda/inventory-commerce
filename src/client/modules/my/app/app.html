@@ -1,0 +1,11 @@
+<template>
+    <my-header ></my-header>
+    <div class="feedsContainer">
+        <template for:each={listings} for:item="car">
+            <my-feed-item-regular vehicle={car} key={car.Id}>
+            </my-feed-item-regular>
+        </template>
+    </div>
+  
+ 
+</template>

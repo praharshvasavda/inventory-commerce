@@ -1,0 +1,98 @@
+<template>
+
+
+        <div class="feed-container">
+            <div class="img-container" style={image}>
+            </div>
+            <div class="content">
+                <div class="header">
+                    <h2 class="header-left">{vehicle.Make__c} {vehicle.Model__c}
+                    </h2>
+                </div>
+                <div class="body">
+                    <ul class="vehicle-details" data-item-name="vehicle-details">
+                        <li data-type="mileage">
+                            {vehicle.mileage__c} km
+                        </li>
+                        <li data-type="first-registration">
+                            {sourceDate}
+                        </li>
+                        <li data-type="vehicle-power">
+                            {vehicle.Power_HP__c} hp
+                        </li>
+                        <li data-type="offer-type">
+                            {vehicle.Stock_type__c}
+                        </li>
+                        <li data-type="Color">
+                            {vehicle.Color__c}
+                        </li>
+                        <li data-type="SKU">
+                            SKU: {vehicle.SKU__c}
+                        </li>
+                        </ul>
+                </div>
+     
+            </div>
+            <div class="content2">
+              
+                <div class="content-price">
+                    € {vehicle.Price__c}
+                </div>
+               
+                <template if:true={noStock}>
+                    <p class="reservedNotice">Vehicle is reserved</p>
+                </template>
+                <template if:false={noStock}>
+                    <div class="content-stock">
+                        Available stock: {stock}
+                    </div>
+                    <div class="content-buy">
+                        <button class="shop-btn" onclick={toggleForm}>Buy</button>
+                    </div>
+                </template>
+               
+            </div>
+        </div>
+        
+        <template if:true={showForm}>
+            <section role="dialog" tabindex="-1" aria-label="Meaningful description of the modal content" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                  <header class="slds-modal__header slds-modal__header_empty">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={toggleForm}>
+                      <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Close</span>
+                    </button>
+                  </header>
+                  <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <template if:false={isOrdered}>
+                        <h2>Order Vehicle</h2>
+                        <div class="slds-form">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">Name</label>
+                                <div class="slds-form-element__control">
+                                    <input type="text" id="horizontal-input-id-01" value="Tereza Customer" class="slds-input" />
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:true={isOrdered}>
+                        <h2 style='font-size: 1.5rem;'>Order Completed</h2>
+                        <h3 style='font-size: 1.5rem; margin-top:5%;'>Your order number is: {orderNumber}</h3>
+                    </template>
+                    
+                  </div>
+                  <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={toggleForm}>Cancel</button>
+                    <template if:false={isOrdered}>
+                        <button class="slds-button slds-button_brand" onclick={order}>Order</button>
+                    </template>
+                  </footer>
+                </div>
+              </section>
+              <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+       
+        
+        </template>

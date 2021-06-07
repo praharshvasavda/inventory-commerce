@@ -1,0 +1,124 @@
+.feed-container{
+    box-sizing: border-box;
+    height: 200px;
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    margin: 20px;
+    box-shadow: 0 0 8px 1px rgb(15 34 80 / 5%);
+    /* margin-left: 15%; */
+    background-color: white;
+    
+}
+
+.img-container{
+    height: 200px;
+    width: 25%;
+    margin: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: white;
+    position: relative;
+}
+
+
+.content{
+    width: 45%;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+}
+
+.content2{
+    width: 30%;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+}
+
+.content-price{
+    margin-top: 5%;
+    font-size: 1.5rem;
+    margin-left: 20%;
+
+}
+
+.content-stock{
+    margin-top: 3%;
+    margin-left: 20%;
+}
+.content-buy{
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+
+
+
+.body{
+    position: relative;
+    line-height: 1.4em;
+    font-size: 13px;
+    padding-right: 1%;
+}
+
+.vehicle-details{
+    margin-top: 1%;
+    list-style: none;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.vehicle-details li{
+    -webkit-box-flex: 0;
+    flex: 0 0 48%;
+    padding: 8px 0;
+    color: #333;
+    border-bottom: 1px solid #c4c4c4;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 13px;
+    font-size: 0.8125rem;
+}
+
+.shop-btn{
+    background-color: #3b619a;
+    border-radius: 25px;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    cursor: pointer;
+    border: 0;
+    width: 100px;
+}
+
+.shop-btn:hover{
+    background-color:  #050a08;
+}
+
+.reservedNotice{
+    margin-left: 10px;
+    margin-top: 40px;
+    font-size: 1.4rem;
+    color: #5a5a5a;
+}

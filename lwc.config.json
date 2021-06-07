@@ -1,0 +1,11 @@
+{
+    "modules": [
+        {
+            "dir": "src/client/modules"
+        },
+        {
+            "name" : "lds",
+            "path" : "src/modules/my/util/LightningElementSLDS.js"
+        }
+    ]
+}
