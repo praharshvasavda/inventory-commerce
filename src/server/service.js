@@ -8,8 +8,16 @@ module.exports = function(app){
     });
 
     
-    app.get('/api/listings', (req, res) => {
+    /*app.get('/api/listings', (req, res) => {
         conn.query('SELECT Id, Color__c, mileage__c, First_Registration__c, Image_url__c, Make__c, Model__c, Power_HP__c, Price__c, SKU__c, Stock_type__c, VIN__c  FROM AssetListing__c WHERE Active__c = true', function(err, res2) {
+            if (err) { return console.error(err); }
+            res.json(res2);
+        });
+        
+    });*/
+
+    app.get('/api/listings', (req, res) => {
+        conn.query('SELECT Id, DU_Color__c  FROM Listing__c', function(err, res2) {
             if (err) { return console.error(err); }
             res.json(res2);
         });
