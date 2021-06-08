@@ -1,9 +1,10 @@
 module.exports = function(app){
 
     var jsforce = require('jsforce');
-    var conn = new jsforce.Connection();
+    var conn = new jsforce.Connection({loginUrl:'https://test.salesforce.com'});
     conn.login('extern.praharsh.vasavda@vwfs.io.assetcld.prod.uat', 'Germany@2021', function(err, res) {
-    if (err) { 
+    if (err) {
+        console.log('************Login Error*************'); 
         return console.error(err); }
     console.log('Login success', conn.accessToken);
     });
