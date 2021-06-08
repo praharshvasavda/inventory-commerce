@@ -2,7 +2,7 @@ module.exports = function(app){
 
     var jsforce = require('jsforce');
     var conn = new jsforce.Connection();
-    conn.login('dfleminks@vwfs-poc-2021.demo', 'Salesforce1!', function(err, res) {
+    conn.login('extern.praharsh.vasavda@vwfs.io.assetcld.prod.uat', 'Germany@2021', function(err, res) {
     if (err) { return console.error(err); }
     
     });
@@ -16,7 +16,7 @@ module.exports = function(app){
         
     });*/
 
-    app.get('/api/listings', (req, res) => {
+    app.get('/api/listing', (req, res) => {
         conn.query('SELECT Id, DU_Color__c  FROM Listing__c', function(err, res2) {
             if (err) { return console.error(err); }
             res.json(res2);

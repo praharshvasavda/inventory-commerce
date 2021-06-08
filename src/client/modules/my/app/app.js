@@ -10,7 +10,7 @@ export default class App extends LightningElement {
     }
 
     fetchListings(){
-        fetch('/api/listings')
+        fetch('/api/listing')
         .then((resp) => resp.json())
         .then((data)=> {
             console.log(data);
