@@ -4,7 +4,6 @@ module.exports = function(app){
     var conn = new jsforce.Connection();
     conn.login('extern.praharsh.vasavda@vwfs.io.assetcld.prod.uat', 'Germany@2021', function(err, res) {
     if (err) { 
-        console.log(conn.accessToken);
         return console.error(err); }
     
     });
@@ -20,7 +19,10 @@ module.exports = function(app){
 
     app.get('/api/listing', (req, res) => {
         conn.query('SELECT Id, DU_Color__c  FROM Listing__c', function(err, res2) {
-            if (err) { return console.error(err); }
+            if (err) { 
+                console.log(conn.accessToken);
+                console.log(conn.instanceUrl);
+                return console.error(err); }
             res.json(res2);
         });
         
