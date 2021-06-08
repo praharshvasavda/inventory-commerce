@@ -32,6 +32,7 @@ export default class App extends LightningElement {
             //     ]
         })
         .catch((error)=> {
+            console.log('in error');
         console.log(error);
         });
     }
