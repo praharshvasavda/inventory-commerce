@@ -10,10 +10,10 @@ export default class App extends LightningElement {
     }
 
     fetchListings(){
-        fetch('/api/listing')
-        .then((resp) => resp.json())
-        .then((data)=> {
-            console.log(data);
+        // fetch('/api/listing')
+        // .then((resp) => resp.json())
+        // .then((data)=> {
+        //     console.log(data);
             //this.listings = data.records;
             this.listings = [
                     {
@@ -30,10 +30,10 @@ export default class App extends LightningElement {
 
                     }
                 ]
-        })
-        .catch((error)=> {
-        console.log(error);
-        });
+        // })
+        // .catch((error)=> {
+        // console.log(error);
+        // });
     }
 
 
