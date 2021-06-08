@@ -18,7 +18,7 @@ module.exports = function(app){
     });*/
 
     app.get('/api/listing', (req, res) => {
-        conn.query('SELECT Id, DU_Color__c  FROM Listing__c', function(err, res2) {
+        conn.query('SELECT Id  FROM Account', function(err, res2) {
             if (err) { 
                 console.log('token:::',conn.accessToken);
                 console.log('URL:::',conn.instanceUrl);
