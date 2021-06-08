@@ -6,7 +6,7 @@ export default class App extends LightningElement {
 
     constructor(){
         super();
-        //this.fetchListings();
+        this.fetchListings();
     }
 
     fetchListings(){

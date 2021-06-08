@@ -2,7 +2,7 @@ module.exports = function(app){
 
     var jsforce = require('jsforce');
     var conn = new jsforce.Connection({loginUrl:'https://test.salesforce.com'});
-    conn.login('extern.praharsh.vasavda@vwfs.io.assetcld.prod.uat', 'Germany@2021', function(err, res) {
+    conn.login('extern.praharsh.vasavda@vwfs.io.assetcld.prod.uat', 'Germany@2021qApFjdfv555ZoWxJUjnWtAPIo', function(err, res) {
     if (err) {
         console.log('************Login Error*************'); 
         return console.error(err); }
@@ -19,7 +19,7 @@ module.exports = function(app){
     });*/
 
     app.get('/api/listing', (req, res) => {
-        conn.query('SELECT Id  FROM Account', function(err, res2) {
+        conn.query('SELECT Id  FROM Listing__c', function(err, res2) {
             if (err) { 
                 console.log('token:::',conn.accessToken);
                 console.log('URL:::',conn.instanceUrl);
