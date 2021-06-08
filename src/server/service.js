@@ -3,7 +3,9 @@ module.exports = function(app){
     var jsforce = require('jsforce');
     var conn = new jsforce.Connection();
     conn.login('extern.praharsh.vasavda@vwfs.io.assetcld.prod.uat', 'Germany@2021', function(err, res) {
-    if (err) { return console.error(err); }
+    if (err) { 
+        console.log(conn.accessToken);
+        return console.error(err); }
     
     });
 
