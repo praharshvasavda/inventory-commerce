@@ -5,7 +5,7 @@ module.exports = function(app){
     conn.login('extern.praharsh.vasavda@vwfs.io.assetcld.prod.uat', 'Germany@2021', function(err, res) {
     if (err) { 
         return console.error(err); }
-    
+    console.log('Login success', conn.accessToken);
     });
 
     
