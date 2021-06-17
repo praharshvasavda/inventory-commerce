@@ -39,6 +39,7 @@ export default class FeedItemRegular extends LightningElement {
     toggleForm(){
         this.showForm = !this.showForm;
         if(this.showForm && !this.isOrdered){
+            console.log('SKU-----',this.vehicle.SKU__c);
             fetch('/api/oci/reserve/'+this.vehicle.SKU__c)
                 .then((resp) => resp.json())
                 .then((data)=> {
@@ -55,7 +56,7 @@ export default class FeedItemRegular extends LightningElement {
         fetch('/api/order/'+this.vehicle.Id)
             .then((resp) => resp.json())
             .then((data)=> {
-                console.log(data);
+                console.log('Order data',data);
                 this.isOrdered = true;
                 this.orderNumber = data.order;
             })
