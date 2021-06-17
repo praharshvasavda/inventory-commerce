@@ -19,7 +19,7 @@ module.exports = function(app){
     });*/
 
     app.get('/api/listing', (req, res) => {
-        conn.query('SELECT Id, DU_Make__c, DU_ModelName__c, DU_ColorType__c, DU_Color__c, SKU__c  FROM Listing__c', function(err, res2) {
+        conn.query('SELECT Id, DU_Make__c, DU_ModelName__c, DU_ColorType__c, DU_Color__c, SKU__c, Price__c  FROM Listing__c WHERE DU_Status__c=\'Published\' AND DU_Make__c != NULL', function(err, res2) {
             if (err) { 
                 console.log('token:::',conn.accessToken);
                 console.log('URL:::',conn.instanceUrl);

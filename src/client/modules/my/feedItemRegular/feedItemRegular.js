@@ -32,7 +32,7 @@ export default class FeedItemRegular extends LightningElement {
     renderedCallback(){
         if(!this.isRendered){
             //console.log('Testing SKU:' + this.vehicle.SKU__c);
-            //this.getStock(this.vehicle.SKU__c);
+            this.getStock(this.vehicle.SKU__c);
         }
     }
 
