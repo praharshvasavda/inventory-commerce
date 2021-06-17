@@ -6,25 +6,25 @@
             </div>
             <div class="content">
                 <div class="header">
-                    <h2 class="header-left">{vehicle.Make__c} {vehicle.Model__c}
+                    <h2 class="header-left">{vehicle.DU_Make__c} {vehicle.DU_ModelName__c}
                     </h2>
                 </div>
                 <div class="body">
                     <ul class="vehicle-details" data-item-name="vehicle-details">
                         <li data-type="mileage">
-                            {vehicle.mileage__c} km
+                            16 km
                         </li>
                         <li data-type="first-registration">
                             {sourceDate}
                         </li>
                         <li data-type="vehicle-power">
-                            {vehicle.Power_HP__c} hp
+                            40 hp
                         </li>
                         <li data-type="offer-type">
-                            {vehicle.Stock_type__c}
+                            {vehicle.DU_ColorType__c}
                         </li>
                         <li data-type="Color">
-                            {vehicle.Color__c}
+                            {vehicle.DU_Color__c}
                         </li>
                         <li data-type="SKU">
                             SKU: {vehicle.SKU__c}
